@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "App Tracker",
+    "slug": "mobile-si",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/img_icon.png",
+    "splash": {
+      "image": "./assets/images/img_splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/98b4735f-f417-4a70-b5bd-4b2ac4dab567"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/img_adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./assets/images/img_favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "98b4735f-f417-4a70-b5bd-4b2ac4dab567"
+      }
+    }
+  }
+}
