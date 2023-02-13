@@ -7,7 +7,7 @@
     "icon": "./assets/images/img_icon.png",
     "splash": {
       "image": "./assets/images/img_splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {
@@ -22,7 +22,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/img_adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.vitor181.mobilesi"
     },
     "web": {
       "favicon": "./assets/images/img_favicon.png"

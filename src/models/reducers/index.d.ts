@@ -12,6 +12,9 @@ export interface BlynkState {
   longitude: number;
   speed: number;
   altitude: number;
+  deviceConnection: boolean;
+  mapsLink: string;
+  lastSeenAt: string;
 }
 
 export interface ReduxState {

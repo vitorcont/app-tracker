@@ -1,12 +1,16 @@
 import { Poppins_400Regular, Poppins_700Bold } from '@expo-google-fonts/poppins';
 import AppContent from '@mobile/AppContent';
-import { CreateReport } from '@mobile/pages/Content/Home/CreateReport';
+import * as SplashScreen from 'expo-splash-screen';
 import store from '@mobile/store';
-import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Provider } from 'react-redux';
+import { View } from 'react-native';
+import 'intl';
+import 'intl/locale-data/jsonp/pt-BR';
+
+SplashScreen.preventAutoHideAsync();
 
 const App = () => {
   let [fontsloaded] = useFonts({
@@ -14,13 +18,21 @@ const App = () => {
     Poppins_700Bold,
   });
 
-  if (!fontsloaded) return <AppLoading />;
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsloaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsloaded]);
+
+  if (!fontsloaded) return null;
 
   return (
-    <Provider store={store}>
-      <StatusBar style="light" />
-      <AppContent />
-    </Provider>
+    <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
+      <Provider store={store}>
+        <StatusBar style="dark" />
+        <AppContent />
+      </Provider>
+    </View>
   );
 };
 

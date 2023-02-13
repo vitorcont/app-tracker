@@ -1,4 +1,5 @@
-import { Linking } from 'react-native';
+import * as Linking from 'expo-linking';
+import * as WebBrowser from 'expo-web-browser';
 
 export const openCall = (phoneNumberProp: string) => {
   Linking.openURL(`tel:${phoneNumberProp}`);
@@ -14,6 +15,6 @@ export const openEmail = (emailProp: string) => {
   Linking.openURL(url);
 };
 
-export const openWebSite = (siteProp: string) => {
-  Linking.openURL(siteProp);
+export const openWebSite = async (siteProp: string) => {
+  await WebBrowser.openBrowserAsync(siteProp);
 };

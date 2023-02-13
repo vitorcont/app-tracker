@@ -11,6 +11,9 @@ export const getTracking = () => async (dispatch: Dispatch) => {
       BlynkAPI.getLongitude(),
       BlynkAPI.getAltitude(),
       BlynkAPI.getSpeed(),
+      BlynkAPI.getDeviceConnection(),
+      BlynkAPI.getMapsLink(),
+      BlynkAPI.getDatetime(),
     ]);
 
     const payload: reducers.BlynkState = {
@@ -18,6 +21,9 @@ export const getTracking = () => async (dispatch: Dispatch) => {
       longitude: data[1],
       altitude: data[2],
       speed: data[3],
+      deviceConnection: data[4],
+      mapsLink: data[5],
+      lastSeenAt: data[6],
     };
     dispatch({ type: GET_TRACKING, payload });
   } catch (err) {

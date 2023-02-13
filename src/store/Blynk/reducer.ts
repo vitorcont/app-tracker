@@ -5,6 +5,9 @@ export const initialState: reducers.BlynkState = {
   longitude: 0,
   altitude: 0,
   speed: 0,
+  deviceConnection: false,
+  lastSeenAt: '',
+  mapsLink: '',
 };
 
 const blynkReducer = (state = initialState, action: any) => {
@@ -16,6 +19,9 @@ const blynkReducer = (state = initialState, action: any) => {
         longitude: action.payload.longitude,
         altitude: action.payload.altitude,
         speed: action.payload.speed,
+        deviceConnection: action.payload.deviceConnection,
+        lastSeenAt: action.payload.lastSeenAt,
+        mapsLink: action.payload.mapsLink,
       };
     default:
       return state;

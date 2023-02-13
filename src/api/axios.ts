@@ -15,7 +15,7 @@ const handler: IHandler = {
 
 export const getInstance = async () => {
   const axiosInstance = Axios.create({
-    baseURL: 'https://blynk.cloud/external/api/get',
+    baseURL: 'https://blynk.cloud/external/api',
     timeout: 10000,
     headers: {
       'content-Type': 'application/json',

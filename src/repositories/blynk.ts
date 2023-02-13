@@ -3,7 +3,7 @@ import getInstance from '@mobile/api/axios';
 const BlynkAPI = {
   getLatitude: async () => {
     const instance = await getInstance();
-    const { data } = await instance.get('', {
+    const { data } = await instance.get('/get', {
       params: {
         v1: '',
       },
@@ -13,7 +13,7 @@ const BlynkAPI = {
   },
   getLongitude: async () => {
     const instance = await getInstance();
-    const { data } = await instance.get('', {
+    const { data } = await instance.get('/get', {
       params: {
         v2: '',
       },
@@ -23,7 +23,7 @@ const BlynkAPI = {
   },
   getAltitude: async () => {
     const instance = await getInstance();
-    const { data } = await instance.get('', {
+    const { data } = await instance.get('/get', {
       params: {
         v3: '',
       },
@@ -33,9 +33,35 @@ const BlynkAPI = {
   },
   getSpeed: async () => {
     const instance = await getInstance();
-    const { data } = await instance.get('', {
+    const { data } = await instance.get('/get', {
       params: {
         v7: '',
+      },
+    });
+
+    return data;
+  },
+  getDeviceConnection: async () => {
+    const instance = await getInstance();
+    const { data } = await instance.get('isHardwareConnected');
+
+    return data;
+  },
+  getMapsLink: async () => {
+    const instance = await getInstance();
+    const { data } = await instance.get('/get', {
+      params: {
+        v6: '',
+      },
+    });
+
+    return data;
+  },
+  getDatetime: async () => {
+    const instance = await getInstance();
+    const { data } = await instance.get('/get', {
+      params: {
+        v8: '',
       },
     });
 
