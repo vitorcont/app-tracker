@@ -8,6 +8,7 @@ export const initialState: reducers.BlynkState = {
   deviceConnection: false,
   lastSeenAt: '',
   mapsLink: '',
+  bearing: 0,
 };
 
 const blynkReducer = (state = initialState, action: any) => {
@@ -22,6 +23,7 @@ const blynkReducer = (state = initialState, action: any) => {
         deviceConnection: action.payload.deviceConnection,
         lastSeenAt: action.payload.lastSeenAt,
         mapsLink: action.payload.mapsLink,
+        bearing: action.payload.bearing,
       };
     default:
       return state;

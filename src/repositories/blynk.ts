@@ -67,6 +67,16 @@ const BlynkAPI = {
 
     return data;
   },
+  getBearing: async () => {
+    const instance = await getInstance();
+    const { data } = await instance.get('/get', {
+      params: {
+        v9: '',
+      },
+    });
+
+    return data;
+  },
 };
 
 export default BlynkAPI;

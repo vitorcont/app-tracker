@@ -15,6 +15,7 @@ export interface BlynkState {
   deviceConnection: boolean;
   mapsLink: string;
   lastSeenAt: string;
+  bearing: number;
 }
 
 export interface ReduxState {

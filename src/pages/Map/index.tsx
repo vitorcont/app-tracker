@@ -134,7 +134,7 @@ const Map = () => {
                 fontSize: 16,
                 fontWeight: '600',
               }}>
-              {blynk.deviceConnection ? 'Online' : 'Offline'}
+              {!!blynk.deviceConnection ? 'Online' : 'Offline'}
             </Text>
           </View>
           <View style={{ flexDirection: 'row', alignItems: 'center', paddingVertical: 3 }}>
@@ -157,6 +157,17 @@ const Map = () => {
               {DateTime.fromFormat(blynk.lastSeenAt, 'M/d/yyyy h:m')
                 .minus({ hour: 3 })
                 .toFormat('dd/MM/yyyy hh:mm')}
+            </Text>
+          </View>
+          <View style={{ flexDirection: 'row', alignItems: 'center', paddingVertical: 3 }}>
+            <MaterialCommunityIcons name="compass-outline" size={24} color="black" />
+            <Text
+              style={{
+                marginLeft: 8,
+                fontSize: 16,
+                fontWeight: '600',
+              }}>
+              {blynk.bearing.toFixed(0) + 'º'}
             </Text>
           </View>
         </View>
