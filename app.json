@@ -8,7 +8,7 @@
     "splash": {
       "image": "./assets/images/img_splash.png",
       "resizeMode": "cover",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#EFEFEF"
     },
     "updates": {
       "fallbackToCacheTimeout": 0,
@@ -21,7 +21,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/img_adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#EFEFEF"
       },
       "config": {
         "googleMaps": {
