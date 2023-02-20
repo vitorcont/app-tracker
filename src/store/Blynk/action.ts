@@ -25,6 +25,7 @@ export const getTracking = () => async (dispatch: Dispatch) => {
       mapsLink: data[5],
       lastSeenAt: data[6],
     };
+
     dispatch({ type: GET_TRACKING, payload });
   } catch (err) {
     console.log(err);

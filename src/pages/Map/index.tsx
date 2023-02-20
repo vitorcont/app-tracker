@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import MapView, { Marker } from 'react-native-maps';
+import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import { View, TouchableOpacity, Text } from 'react-native';
 import { useReduxState } from '@mobile/hooks/useReduxState';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -69,7 +69,7 @@ const Map = () => {
 
   return (
     <View style={{ flex: 1 }}>
-      <MapView ref={mapRef} style={styles.mapView}>
+      <MapView ref={mapRef} style={styles.mapView} provider={PROVIDER_GOOGLE}>
         {!!blynk.latitude && !!blynk.longitude && (
           <Marker
             tracksViewChanges={false}
